@@ -1,0 +1,242 @@
+:root{
+    --bg:#f3e6f6;
+    --cheese:#fdf3e7;
+    --crust:#d2a679;
+    --blueberry:#3a1f5d;
+    --blue-layer:#4b2b6f;
+    --plate:#ffffff;
+    --text:#3a1f5d;
+  }
+
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0}
+
+  .stage{
+    min-height:100vh;
+    background:var(--bg);
+    display:grid;
+    place-items:center;
+    padding:40px 16px 80px;
+    overflow:hidden;
+  }
+  .wrap{text-align:center;display:grid;gap:24px;}
+
+  .cake{
+    position:relative;
+    width:300px;
+    margin-inline:auto;
+    border-radius:0 0 16px 16px;
+    box-shadow:0 16px 28px rgba(0,0,0,.12);
+    overflow:visible;
+  }
+
+  /* layers */
+  .cheese{
+    height:95px;
+    background:var(--cheese);
+    border-radius:20px 20px 0 0;
+    position:relative; 
+    z-index:2;
+  }
+  .crust{
+    height:40px;
+    background:var(--crust);
+    border-radius:0 0 16px 16px;
+    position:relative; 
+    z-index:2;
+  }
+
+  /* plate */
+  .cake::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    bottom:-12px;
+    transform:translateX(-50%);
+    width:320px;height:6px;background:var(--plate);
+    border-radius:999px;
+    box-shadow:0 10px 16px rgba(0,0,0,.18);
+    z-index:3;
+  }
+
+  /* icing */
+  .icing{
+    position:absolute; top:0; left:0;
+    width:100%; height:80px;
+    z-index:3;
+  }
+  .icing path{ fill:var(--blue-layer); }
+
+  .berries{
+    position:absolute;
+    top:-14px;
+    left:-20px;
+    right:-20px;
+    display:flex;
+    justify-content:center;
+    flex-wrap:nowrap;
+    gap:0;
+    z-index:4;
+  }
+  .berry{
+    width:28px;
+    height:28px;
+    border-radius:50%;
+    background:var(--blueberry);
+    position:relative;
+    margin:0;
+    box-shadow:inset -2px -3px 6px rgba(0,0,0,.35);
+  }
+  .berry + .berry{ margin-left:-10px; }
+  .berry:nth-child(3n){ transform:translateY(1px); }
+  .berry:nth-child(4n){ transform:translateY(-1px); }
+  .berry::after{
+    content:"";
+    position:absolute;
+    top:6px; left:7px;
+    width:8px; height:8px;
+    border-radius:50%;
+    background:radial-gradient(circle at 30% 30%, #ffffffaa 0 50%, transparent 60%);
+    filter:blur(.3px);
+  }
+
+  .love-note{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    align-items:flex-start;
+    margin-top:-200px;
+    position:relative;
+    width:140px;
+    height:72px;
+    padding:10px 12px;
+    background:linear-gradient(180deg,#fff,#fdf9f2);
+    border:1px solid rgba(0,0,0,.08);
+    border-radius:10px;
+    box-shadow:0 6px 14px rgba(0,0,0,.18), inset 0 0 0 1px rgba(255,255,255,.6);
+    transform:rotate(-4deg);
+    left:350px;
+    z-index:999;
+    transition:transform .2s ease;
+  }
+  .love-note:hover{ transform:rotate(-2deg) translateY(-2px); }
+  .note-text{
+    align-self: center;
+    font-family:"Bradley Hand","Segoe Print","Comic Sans MS",cursive;
+    font-size:15px;
+    text-align: center;
+    color:var(--text);
+  }
+
+  /* candle */
+  .candle{
+    position:absolute; left:50%; top:-90px; transform:translateX(-50%);
+    width:16px; height:90px;
+    background:repeating-linear-gradient(0deg,#ffffff 0 10px,#4b2b6f 10px 20px);
+    border-radius:8px;
+    box-shadow:0 6px 12px rgba(0,0,0,.18);
+    z-index:1;
+    cursor:pointer;
+  }
+  .candle i{
+    position:absolute; left:50%; top:-10px; transform:translateX(-50%);
+    width:2px;height:10px;background:#333;border-radius:1px;
+  }
+  .flame{
+    position:absolute; left:50%; top:-34px; transform:translateX(-50%);
+    width:18px;height:26px;
+    border-radius:50% 50% 50% 50%/60% 60% 40% 40%;
+    background:#ffd76e;
+    box-shadow:0 0 12px #ffcc5a, 0 0 24px #ffb94a;
+    animation:flicker 1.3s infinite ease-in-out;
+  }
+  @keyframes flicker{
+    0%,100%{ transform:translateX(-50%) scale(1); filter:brightness(1); }
+    50%{ transform:translateX(calc(-50% + 1px)) scale(1.05); filter:brightness(1.15); }
+  }
+
+  /* smoke */
+  .smoke{
+    position:absolute;
+    left:50%; top:-34px;
+    transform:translateX(-50%);
+    pointer-events:none;
+  }
+  .smoke span{
+    position:absolute;
+    bottom:0;
+    left:50%;
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:rgba(200,200,200,0.5);
+    transform:translateX(-50%);
+    animation:smokeRise 2s forwards;
+  }
+  @keyframes smokeRise{
+    0%{ transform:translate(-50%,0) scale(0.5); opacity:0.8; }
+    100%{ transform:translate(-50%,-60px) scale(1.4); opacity:0; }
+  }
+
+  /* candle blown out */
+  .candle.blown .flame{ display:none; }
+
+  h2{margin:18px 0 0;font:700 32px/1.1 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);}
+  p{margin:0;font:500 25px/1.2 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);opacity:.9;}
+
+  /* floating hearts */
+  #hearts{
+    pointer-events:none;
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    z-index:1000;
+  }
+  .heart{
+    position:absolute;
+    width:14px;
+    height:14px;
+    transform:rotate(45deg);
+  }
+  .heart::before,
+  .heart::after{
+    content:"";
+    position:absolute;
+    width:14px;
+    height:14px;
+    border-radius:50%;
+    background:#ff7aa2;
+  }
+  .heart::before{ left:-7px; top:0; }
+  .heart::after{ left:0; top:-7px; }
+
+  @keyframes rise{
+    0%   { transform:translateY(0) rotate(45deg); opacity:1; }
+    100% { transform:translateY(-140vh) rotate(45deg); opacity:0; }
+  }
+
+  /* back button */
+  .back-btn{
+    position:fixed;
+    top:0.625rem;
+    left:0.625rem;
+    padding:0.4rem 0.8rem;
+    background:linear-gradient(135deg, #f3e6f6 0%, #e8d8ec 100%);
+    color:var(--blueberry);
+    border:2px solid var(--blueberry);
+    border-radius:50px;
+    font-size:0.75rem;
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+    font-weight:700;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    box-shadow:0 4px 12px rgba(58,31,93,0.3);
+    transition:transform 0.2s, box-shadow 0.2s;
+    z-index:9999;
+  }
+  .back-btn:hover{
+    transform:scale(1.05);
+    box-shadow:0 6px 16px rgba(58,31,93,0.4);
+  }

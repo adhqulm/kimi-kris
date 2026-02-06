@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cheesecake Shop</title>
+  <style>
+    @font-face {
+      font-family: 'Smash Brush';
+      src: url('valentines/media/Smash Brush.otf') format('opentype');
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: #f5f0e1;
+      gap: 2rem;
+      padding: 2rem;
+      font-family: 'Smash Brush', 'Georgia', serif;
+    }
+
+    h1 {
+      color: #5c3d2e;
+      text-align: center;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+      line-height: 1.2;
+      margin-top: -3rem;
+    }
+
+    h1 .top {
+      display: block;
+      font-size: 2rem;
+    }
+
+    h1 .bottom {
+      display: block;
+      font-size: 3.5rem;
+    }
+
+    .cheesecakes {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 4rem;
+    }
+
+    .cake-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .cake-container:hover {
+      transform: scale(1.08);
+    }
+
+    .cake-container:active {
+      transform: scale(0.98);
+    }
+
+    .cheesecake {
+      width: 280px;
+      height: auto;
+    }
+
+    .cake-label {
+      margin-top: 1rem;
+      font-size: 1.4rem;
+      color: #5c3d2e;
+      text-align: center;
+    }
+
+    .cake-container:first-child .cake-label {
+      color: #3a1f5d;
+    }
+
+    .cake-container:last-child .cake-label {
+      color: #8B0000;
+    }
+
+    @media (max-width: 700px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .cheesecakes {
+        flex-direction: column;
+        gap: 2rem;
+      }
+
+      .cheesecake {
+        width: 200px;
+      }
+
+      .cake-label {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1><span class="top">Kimi and Kristina's</span><span class="bottom">Bakery and Coffee Shop</span></h1>
+  <div class="cheesecakes">
+    <div class="cake-container" onclick="window.location.href='main.html'">
+      <img
+        src="cheesecake-shop/blueberry.png"
+        alt="Blueberry Cheesecake"
+        class="cheesecake"
+      />
+      <span class="cake-label">Kimi's Blueberry Cheesecake</span>
+    </div>
+
+    <div class="cake-container" onclick="window.location.href='valentines/index.html'">
+      <img
+        src="cheesecake-shop/strawberry.png"
+        alt="Strawberry Cheesecake"
+        class="cheesecake"
+      />
+      <span class="cake-label">Kristina's Strawberry Cheesecake</span>
+    </div>
+  </div>
+</body>
+</html>

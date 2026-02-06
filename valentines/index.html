@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>to poobie doobie!</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="media/icon.ico">
+</head>
+<body>
+    <a href="../index.html" class="back-btn" aria-label="Back to home">Back to Cheesecakes</a>
+    <button class="scratch-btn" id="scratchBtn">Scratch Card</button>
+    <button class="coupons-btn" id="couponsBtn">Coupons</button>
+    <div id="lockScreen">
+        <div class="background-decorations">
+            <div id="petalsContainer"></div>
+        </div>
+        <div class="lock-content">
+            <img src="media/decor/password-page/lock-border.png" alt="Border" class="lock-border">
+            <img src="media/decor/password-page/bears.jpg" alt="Bears" class="lock-image">
+            <h1>Login</h1>
+            <p>Hint: Our special date (DDMMYY)</p>
+            <div class="password-container">
+                <input type="password" id="passwordInput" placeholder="Passcode" maxlength="6">
+                <button id="togglePassword" class="toggle-password">👁</button>
+            </div>
+            <button id="loginBtn">Enter</button>
+            <p id="errorMsg" style="color: red; display: none;">Wrong date! Try again.</p>
+        </div>
+    </div>
+
+    <div class="background-decorations">
+        <div id="northernLights"></div>
+        <div id="petalsContainer"></div>
+        <div id="firefliesContainer"></div>
+    </div>
+
+    <div class="polaroids">
+        <div class="polaroid clickable draggable" data-img="media/photos/winery.jpg" style="top: 5%; left: 3%; transform: rotate(-10deg);">
+            <img src="media/photos/winery.jpg" alt="Us">
+            <p>Us on wine tour YAYYYY</p>
+        </div>
+        <div class="polaroid clickable draggable" data-img="media/photos/selfie.jpg" style="top: 5%; right: 3%; transform: rotate(12deg);">
+            <img src="media/photos/selfie.jpg" alt="Us">
+            <p>We are the prettiest couple in the world</p>
+        </div>
+        <div class="polaroid clickable draggable" data-img="media/photos/new-year.jpg" style="top: 50%; left: 2%; transform: translateY(-50%) rotate(8deg);">
+            <img src="media/photos/new-year.jpg" alt="Us">
+            <p>Our first New Year together!</p>
+        </div>
+        <div class="polaroid clickable draggable" data-img="media/photos/antalya.jpg" style="top: 50%; right: 2%; transform: translateY(-50%) rotate(-15deg);">
+            <img src="media/photos/antalya.jpg" alt="Us">
+            <p>The best and most memorable vacation I have ever been to</p>
+        </div>
+        <div class="polaroid clickable draggable" data-img="media/photos/georgia.jpg" style="bottom: 5%; left: 3%; transform: rotate(-12deg);">
+            <img src="media/photos/georgia.jpg" alt="Us">
+            <p>I will forever be grateful that you moved in to this ahh country for me</p>
+        </div>
+        <div class="polaroid clickable draggable" data-img="media/photos/mirror.jpg" style="bottom: 5%; right: 3%; transform: rotate(18deg);">
+            <img src="media/photos/mirror.jpg" alt="Us">
+            <p>I love you so much baby. You're my world</p>
+        </div>
+        <div class="polaroid clickable draggable" data-img="media/photos/car.jpg" style="top: 10%; left: 22%; transform: rotate(-7deg);">
+            <img src="media/photos/car.jpg" alt="Us">
+            <p>Us in da car afer buying labubu</p>
+        </div>
+        <div class="polaroid clickable draggable" data-img="media/photos/after-mall.jpg" style="top:45%; left: 70%; transform: translateX(-50%) rotate(-5deg);">
+            <img src="media/photos/after-mall.jpg" alt="Us">
+            <p>Yours forever.</p>
+        </div>
+        <div class="polaroid clickable draggable" data-img="media/photos/bar.jpg" style="top: 44%; left: 30%; transform: translateX(-50%) rotate(5deg);">
+            <img src="media/photos/bar.jpg" alt="Us">
+            <p>Although thats my favourite band, and I didnt enjoy it much because I was sober, you still made the time memorable by just being there. I love you.</p>
+        </div>
+        <div class="polaroid clickable draggable" data-img="media/photos/beach.jpg" style="top: 10%; right: 22%; transform: rotate(14deg);">
+            <img src="media/photos/beach.jpg" alt="Us">
+            <p>I miss the beach, thank you for the beautiful time you let me have</p>
+        </div>
+    </div>
+
+    <div id="photoViewer" class="photo-viewer">
+        <button class="viewer-close" id="viewerClose">×</button>
+        <button class="viewer-prev" id="viewerPrev">❮</button>
+        <button class="viewer-next" id="viewerNext">❯</button>
+        <img id="viewerImg" src="" alt="Photo">
+    </div>
+
+    <div id="cursorHearts"></div>
+    <div class="container">
+        <div class="card">
+            <div class="card-front">
+                <button class="open-btn" id="openBtn">Flip Card</button>
+            </div>
+
+            <div class="card-inside" id="cardInside">
+                <div class="hearts-bg">
+                    <span class="heart"></span>
+                    <span class="heart"></span>
+                    <span class="heart"></span>
+                    <span class="heart"></span>
+                    <span class="heart"></span>
+                </div>
+                <button class="close-btn" id="closeBtn">×</button>
+                <img src="media/decor/main-page/message/arrow.png" alt="Arrow" class="invitation-arrow" id="invitationArrow">
+                <button class="invitation-btn" id="invitationBtn">Invitation</button>
+                <div class="message" id="messageContent">
+                    <h2>My angel,</h2>
+                    <div id="letterContent"></div>
+                    <p class="signature">Yours forever. &lt;3</p>
+                    <button class="video-btn" id="videoBtn">&lt;3</button>
+                    <img src="media/decor/main-page/message/cat.png" alt="Cat" class="cat-image">
+                    <img src="media/decor/main-page/message/post.png" alt="Post" class="post-image">
+                </div>
+                <div class="video-container" id="videoContainer">
+                    <video id="videoPlayer" controls>
+                        <source src="media/us.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="invitation-container" id="invitationContainer">
+                    <img src="media/cards/invitation.png" alt="Invitation" class="invitation-image">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="music-player">
+        <div class="song-info">
+            <div class="song-title" id="songTitle">My Mistakes Were Made For You</div>
+            <div class="song-artist" id="songArtist">The Last Shadow Puppets</div>
+        </div>
+        <div class="progress-container">
+            <div class="time" id="currentTime">0:00</div>
+            <input type="range" id="progressBar" class="progress-bar" min="0" max="100" value="0">
+            <div class="time" id="duration">0:00</div>
+        </div>
+        <div class="controls">
+            <button class="control-btn" id="prevBtn">⏮</button>
+            <button class="control-btn play-btn" id="playBtn">▶</button>
+            <button class="control-btn" id="nextBtn">⏭</button>
+            <div class="volume-control">
+                <img src="media/decor/main-page/volume-icon.png" class="volume-icon" alt="Volume">
+                <input type="range" id="volumeBar" class="volume-bar" min="0" max="100" value="70">
+            </div>
+        </div>
+        <audio id="audioPlayer"></audio>
+    </div>
+
+    <!-- Coupons Modal -->
+    <div id="couponsModal" class="coupons-modal">
+        <button class="coupons-close" id="couponsClose">&times;</button>
+        <div class="coupons-container">
+            <img src="media/decor/main-page/coupons.png" alt="Coupons" class="coupons-image">
+            <div class="coupon-buttons">
+                <button class="coupon-btn" data-coupon="1" data-name="Free Kisses"></button>
+                <button class="coupon-btn" data-coupon="2" data-name="Movie Night"></button>
+                <button class="coupon-btn" data-coupon="3" data-name="Fine You Win This Argument"></button>
+                <button class="coupon-btn" data-coupon="4" data-name="Free Hugs"></button>
+                <button class="coupon-btn" data-coupon="5" data-name="Back Massage"></button>
+                <button class="coupon-btn" data-coupon="6" data-name="Breakfast in Bed"></button>
+                <button class="coupon-btn" data-coupon="7" data-name="Museum Date"></button>
+                <button class="coupon-btn" data-coupon="8" data-name="Anything You Want"></button>
+                <button class="coupon-btn" data-coupon="9" data-name="Romantic Dinner"></button>
+                <button class="coupon-btn" data-coupon="10" data-name="Outside Walk"></button>
+            </div>
+        </div>
+        <div class="coupon-message" id="couponMessage"></div>
+    </div>
+
+    <!-- Scratch Card Modal -->
+    <div id="scratchModal" class="scratch-modal">
+        <button class="scratch-close" id="scratchClose">&times;</button>
+        <div class="scratch-container">
+            <img src="media/decor/main-page/scratch-card-background.png" alt="Scratch Card" class="scratch-bg">
+            <div class="scratch-heart-wrapper">
+                <div class="scratch-message">look in the closet xoxo</div>
+                <canvas id="scratchCanvas"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

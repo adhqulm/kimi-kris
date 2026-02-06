@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="app.css" rel="stylesheet" />
+<title>i love my boyfriend</title>
+</head>
+
+<body>
+<a href="index.html" class="back-btn" aria-label="Back to home">Back to Cheesecakes</a>
+<section class="stage">
+  <div class="wrap">
+    <div class="cake">
+      <!-- candle clickable -->
+      <div class="candle" id="candle">
+        <i></i>
+        <span class="flame"></span>
+        <div class="smoke" id="smoke"></div>
+      </div>
+
+      <svg class="icing" viewBox="0 0 300 80" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,0 H300 V40
+          C290,35 285,75 260,70
+          C240,66 235,40 215,42
+          C195,44 190,75 165,72
+          C145,68 140,45 120,46
+          C100,48 95,72 75,70
+          C55,68 50,42 35,44
+          C20,46 10,60 0,58 Z"/>
+      </svg>
+
+      <div class="berries">
+        <div class="berry"></div><div class="berry"></div><div class="berry"></div>
+        <div class="berry"></div><div class="berry"></div><div class="berry"></div>
+        <div class="berry"></div><div class="berry"></div><div class="berry"></div>
+        <div class="berry"></div><div class="berry"></div><div class="berry"></div>
+        <div class="berry"></div><div class="berry"></div><div class="berry"></div>
+        <div class="berry"></div><div class="berry"></div>
+      </div>
+
+      <div class="cheese"></div>
+      <div class="crust"></div>
+    </div>
+
+    <h2 id="counter"><i>loading…</i></h2>
+    <p><i>yay i love you!</i></p>
+    
+    <div class="love-note">
+      <span id="note" class="note-text">blow out the candle, babe ♥</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- hearts -->
+<div id="hearts"></div>
+
+<!-- confetti library -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
