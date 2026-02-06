@@ -507,7 +507,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (scratchInitialized) return;
 
         const heartImg = new Image();
-        heartImg.src = 'media/decor/main-page/scratch-heart.png';
+        heartImg.src = 'media/decor/main-page/scratch-card/xoxo-heart.png';
 
         heartImg.onload = function() {
             // Set canvas to heart image size

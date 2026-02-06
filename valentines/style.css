@@ -67,7 +67,7 @@ body {
     position: absolute;
     width: 120px;
     height: 120px;
-    background: url('media/decor/main-page/heart.png') center/contain no-repeat;
+    background: url('media/decor/main-page/background-heart.png') center/contain no-repeat;
     opacity: 0.5;
     animation: floatHeart 8s ease-in-out infinite;
     pointer-events: none;
