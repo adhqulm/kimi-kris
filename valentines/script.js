@@ -485,7 +485,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const couponName = this.getAttribute('data-name');
 
             // Show success message
-            showCouponMessage("Coupon acquired! Take a screenshot and send it to me to receive the benefits!", 4000);
+            showCouponMessage("Coupon acquired! The benefits will shortly be provided!", 4000);
 
             // Send Telegram notification
             sendTelegramNotification(couponName);

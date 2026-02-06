@@ -184,10 +184,10 @@ body {
 
 .polaroid {
     position: absolute;
-    background: #f5f5f0;
-    padding: 1.5625rem 1.5625rem 3.4375rem 1.5625rem;
+    background: #e8e6e1;
+    padding: 1rem 1rem 1.2rem 1rem;
     box-shadow: 0 0.9375rem 2.5rem rgba(0, 0, 0, 0.3);
-    width: 21.875rem;
+    width: 19rem;
     transition: transform 0.3s ease;
     border: 1px solid rgba(0, 0, 0, 0.05);
 }
@@ -227,7 +227,7 @@ body {
 }
 
 .polaroid p {
-    text-align: right;
+    text-align: center;
     font-family: 'Smash Brush', 'Indie Flower', cursive, 'Georgia', serif;
     font-size: 1.125rem;
     color: #8B0000;
